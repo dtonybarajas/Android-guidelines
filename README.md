@@ -64,15 +64,7 @@ You do not need to write Javadoc for trivial get and set methods such as setFoo(
 
 Every method you write, public or otherwise, would benefit from Javadoc. Public methods are part of an API and therefore require Javadoc. Android does not currently enforce a specific style for writing Javadoc comments, but you should follow the instructions [How to Write Doc Comments for the Javadoc Tool](https://www.oracle.com/technetwork/java/javase/documentation/index-137868.html).
 
-## 1.2 Limit line length
-
-Each line of text in your code should be at most 100 characters long. While much discussion has surrounded this rule, the decision remains that 100 characters is the maximum with the following exceptions:
-
-* If a comment line contains an example command or a literal URL longer than 100 characters, that line may be longer than 100 characters for ease of cut and paste.
-* Import lines can go over the limit because humans rarely see them (this also simplifies tool writing).
-
-
-## 1.3 Use TODO comments
+## 1.2 Use TODO comments
 
 Use TODO comments for code that is temporary, a short-term solution, or good-enough but not perfect. 
 TODOs should include the string TODO in all caps, followed by a colon:
@@ -86,17 +78,17 @@ and
 ```
 If your TODO is of the form "At a future date do something" make sure that you either include a very specific date ("Fix by November 2005") or a very specific event ("Remove this code after all production mixers understand protocol V7.").
 
-## 1.4 Naming
-### 1.4.1 Rules common to all identifiers
+## 1.3 Naming
+### 1.3.1 Rules common to all identifiers
 Identifiers use only ASCII letters and digits, and, in a small number of cases noted below, underscores. Thus each valid identifier name is matched by the regular expression \w+ .
 
 In Google Style, special prefixes or suffixes are not used. For example, these names are not Google Style: name_, mName, s_name and kName.
 
-### 1.4.2 Rules by identifier type
-#### 1.4.2.1 Package names
+### 1.3.2 Rules by identifier type
+#### 1.3.2.1 Package names
 Package names are all lowercase, with consecutive words simply concatenated together (no underscores). For example, com.example.deepspace, not com.example.deepSpace or com.example.deep_space.
 
-#### 1.4.2.2 Class names
+#### 1.3.2.2 Class names
 Class names are written in UpperCamelCase.
 
 Class names are typically nouns or noun phrases. For example, Character or ImmutableList. Interface names may also be nouns or noun phrases (for example, List), but may sometimes be adjectives or adjective phrases instead (for example, Readable).
@@ -105,14 +97,14 @@ There are no specific rules or even well-established conventions for naming anno
 
 Test classes are named starting with the name of the class they are testing, and ending with Test. For example, HashTest or HashIntegrationTest.
 
-#### 1.4.2.3 Method names
+#### 1.3.2.3 Method names
 Method names are written in lowerCamelCase.
 
 Method names are typically verbs or verb phrases. For example, sendMessage or stop.
 
 Underscores may appear in JUnit test method names to separate logical components of the name, with each component written in lowerCamelCase. One typical pattern is <methodUnderTest>_<state>, for example pop_emptyStack. There is no One Correct Way to name test methods.
 
-#### 1.4.2.4 Constant names
+#### 1.3.2.4 Constant names
 Constant names use CONSTANT_CASE: all uppercase letters, with each word separated from the next by a single underscore. But what is a constant, exactly?
 
 Constants are static final fields whose contents are deeply immutable and whose methods have no detectable side effects. This includes primitives, Strings, immutable types, and immutable collections of immutable types. If any of the instance's observable state can change, it is not a constant. Merely intending to never mutate the object is not enough. Examples:
@@ -138,29 +130,29 @@ static final String[] nonEmptyArray = {"these", "can", "change"};
 ```
 These names are typically nouns or noun phrases.
 
-#### 1.4.2.5 Non-constant field names
+#### 1.3.2.5 Non-constant field names
 Non-constant field names (static or otherwise) are written in lowerCamelCase.
 
 These names are typically nouns or noun phrases. For example, computedValues or index.
 
-#### 1.4.2.6 Parameter names
+#### 1.3.2.6 Parameter names
 Parameter names are written in lowerCamelCase.
 
 One-character parameter names in public methods should be avoided.
 
-#### 1.4.2.7 Local variable names
+#### 1.3.2.7 Local variable names
 Local variable names are written in lowerCamelCase.
 
 Even when final and immutable, local variables are not considered to be constants, and should not be styled as constants.
 
-#### 1.4.2.8 Type variable names
+#### 1.3.2.8 Type variable names
 Each type variable is named in one of two styles:
 
 * A single capital letter, optionally followed by a single numeral (such as E, T, X, T2)
 * A name in the form used for classes (see Section 5.2.2, Class names), followed by the capital letter T (examples: RequestT, FooBarT).
 
-## 1.5 Whitespace
-### 1.5.1 Vertical Whitespace
+## 1.4 Whitespace
+### 1.4.1 Vertical Whitespace
 A single blank line always appears:
 
 1. Between consecutive members or initializers of a class: fields, constructors, methods, nested classes, static initializers, and instance initializers.
@@ -171,7 +163,7 @@ As required by other sections of this document (such as Section 3, Source file s
 
 Multiple consecutive blank lines are permitted, but never required (or encouraged).
 
-### 1.5.2 Horizontal whitespace
+### 1.4.2 Horizontal whitespace
 Beyond where required by the language or other style rules, and apart from literals, comments and Javadoc, a single ASCII space also appears in the following places __only__.
 
 1. Separating any reserved word, such as if, for or catch, from an open parenthesis (() that follows it on that line
@@ -194,5 +186,4 @@ but not
 * new int[] {5, 6} and new int[] { 5, 6 } are both valid
 9. Between a type annotation and [] or ....
 This rule is never interpreted as requiring or forbidding additional space at the start or end of a line; it addresses only interior space.
-
 
