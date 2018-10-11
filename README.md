@@ -36,3 +36,14 @@ public class Foo {
     ...
 }
 ```
+
+Every class and nontrivial public method you write must contain a Javadoc comment with at least one sentence describing what the class or method does. This sentence should start with a third person descriptive verb.
+
+Examples:
+
+´´´
+/** Returns the correctly rounded positive square root of a double value. */
+static double sqrt(double a) {
+    ...
+}
+´´´
